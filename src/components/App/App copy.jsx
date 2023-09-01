@@ -31,69 +31,69 @@
      // localStorage.setItem(localStorageKey, JSON.stringify(this.state.contacts));
   // }
  // }
-  
+  //
 
   
-  addContact = (newContact) => {
-     const lowerCaseName = newContact.name.toLowerCase();
-    const lowerCaseNumber = newContact.number.toLowerCase();
+  //addContact = (newContact) => {
+     //const lowerCaseName = newContact.name.toLowerCase();
+   // const lowerCaseNumber = newContact.number.toLowerCase();
     
-    if (this.state.contacts.find(contact => contact.name.toLowerCase() === lowerCaseName)) {
-      return alert(`${newContact.name} is already in contacts`);
-    }
+    //if (this.state.contacts.find(contact => contact.name.toLowerCase() === lowerCaseName)) {
+     // return alert(`${newContact.name} is already in contacts`);
+    ////}
       
-    if (this.state.contacts.find(contact => contact.number.toLowerCase() === lowerCaseNumber)) {
-      return alert(`${newContact.number} is already in contacts`);
-    }
+   // if (this.state.contacts.find(contact => contact.number.toLowerCase() === lowerCaseNumber)) {
+     // return alert(`${newContact.number} is already in contacts`);
+   // }
 
-    this.setState(prevState => ({
-      contacts: [ ...prevState.contacts, newContact]
-    }));
-  };
+    //this.setState(prevState => ({
+     // contacts: [ ...prevState.contacts, newContact]
+   // }));
+  //};
 
 
 
-  getContact = evt => {
-    const searchQuerry = evt.currentTarget.value;
-    this.setState({filter: searchQuerry})
-  }
+  //getContact = evt => {
+   // const searchQuerry = evt.currentTarget.value;
+    //this.setState({filter: searchQuerry})
+  //}
   
-  removeContact = contactId => {
-    this.setState(prevState => ({
-      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
-    }));
-  };
+ // removeContact = contactId => {
+    //this.setState(prevState => ({
+      //contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    //}));
+  //};
 
-  showPhonebook = () => {
-    this.setState({ isOpen: true });
-  };
+  //showPhonebook = () => {
+    //this.setState({ isOpen: true });
+ // };
 
-    hidePhonebook = () => {
-    this.setState({ isOpen: false });
-  };
+   //hidePhonebook = () => {
+    //this.setState({ isOpen: false });
+  //};
   
-  render() {
-    const { contacts, filter } = this.state;
-    const filteredContacts = contacts.filter(({ name }) => name.toLowerCase().includes(filter.toLocaleLowerCase()));
-    return (
-      <>
-        {!this.state.isOpen && <OpenPhonebook onClick={this.showPhonebook} className="phoneBook">Open Phonebook</OpenPhonebook>}
-        {this.state.isOpen &&
-          <AppWrapper>
-            <CloseBtn onClick={this.hidePhonebook}/>
-            <ContactsForm onAdd={ this.addContact } />
-            <SearchWrapper>
-              <StyledTitles>
-                <Title>Contacts</Title>
-                <p>Find contacts by name</p>
-              </StyledTitles>
-              <Filter filter={ filter } getContact={this.getContact}  />
-              <ContactList filteredContacts={filteredContacts} removeContact={ this.removeContact} />
-            </SearchWrapper>
-        </AppWrapper>
-        }
+  ////render() {
+    ////const { contacts, filter } = this.state;
+    ////const filteredContacts = contacts.filter(({ name }) => name.toLowerCase().includes(filter.toLocaleLowerCase()));
+    ////return (
+     //// <>
+        ////{!this.state.isOpen && <OpenPhonebook onClick={this.showPhonebook} className="phoneBook">Open Phonebook</OpenPhonebook>}
+        ////{this.state.isOpen &&
+         //// <AppWrapper>
+            ////<CloseBtn onClick={this.hidePhonebook}/>
+            ////<ContactsForm onAdd={ this.addContact } />
+            ////<SearchWrapper>
+             //// <StyledTitles>
+               //// <Title>Contacts</Title>
+               //// <p>Find contacts by name</p>
+              ////</StyledTitles>
+              ////<Filter filter={ filter } getContact={this.getContact}  />
+              ////<ContactList filteredContacts={filteredContacts} removeContact={ this.removeContact} />
+            ////</SearchWrapper>
+        ////</AppWrapper>
+        ////}
           
-        </>
-    )
-  }
-};
+        //</>
+    //)
+  //}
+//};
