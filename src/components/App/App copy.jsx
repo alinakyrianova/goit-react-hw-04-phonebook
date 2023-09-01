@@ -25,12 +25,12 @@
    //}
  // }
   
-  componentDidUpdate = (prevProps, prevState) => {
+ // componentDidUpdate = (prevProps, prevState) => {
     
-    if (prevState.contacts !== this.state.contacts) {
-      localStorage.setItem(localStorageKey, JSON.stringify(this.state.contacts));
-   }
-  }
+    //if (prevState.contacts !== this.state.contacts) {
+     // localStorage.setItem(localStorageKey, JSON.stringify(this.state.contacts));
+  // }
+ // }
   
 
   

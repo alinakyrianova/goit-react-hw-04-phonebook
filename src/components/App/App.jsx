@@ -6,15 +6,21 @@ import { AppWrapper, Title, SearchWrapper, StyledTitles, CloseBtn, OpenPhonebook
 
 const localStorageKey = 'contacts'
 export const App = () => {
-    const [contacts, setContacts] = useState(()=> {
-    const savedContacts = localStorage.getItem(localStorageKey);
+    const [contacts, setContacts] = useState(() => {
+        const savedContacts = localStorage.getItem(localStorageKey);
     
-if (savedContacts !== null) {
-    return JSON.parse(savedContacts);
-}
-return [];
+        if (savedContacts !== null) {
+            return JSON.parse(savedContacts);
+        }
+        return [];
     });
     
+    const [filter, setFilter] = useState('');
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        localStorage.setItem(localStorageKey, JSON.stringify(contacts));
+}, [contacts]);
     
 
 }
