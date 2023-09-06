@@ -32,11 +32,13 @@ export const App = () => {
         setContacts(prevState => [...prevState, newContact]);
     };
     const getContact = evt => { 
-            const searchQuerry = evt.currentTarget.value;
-        setFilter(searchQuerry);
+            const searchQuery = evt.currentTarget.value;
+        setFilter(searchQuery);
     }
     const removeContact = contactId => {
-        this.setState(prevState => prevState.filter(contact => contact.id !== contactId));
+        const updatedContacts = contacts.filter(contact => contact.id !== contactId);
+setContacts(updatedContacts);
+
        
     };
 
